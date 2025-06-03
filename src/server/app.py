@@ -8,7 +8,8 @@ import os
 from typing import List, cast
 from uuid import uuid4
 
-from fastapi import FastAPI, HTTPException
+from starlette.responses import Response
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response, StreamingResponse
 from langchain_core.messages import AIMessageChunk, ToolMessage, BaseMessage
@@ -46,6 +47,13 @@ app.add_middleware(
     allow_methods=["*"],  # Allows all methods
     allow_headers=["*"],  # Allows all headers
 )
+
+@app.middleware("http")
+async def add_private_network_header(request: Request, call_next):
+    response = await call_next(request)
+    # Add this header to all responses
+    response.headers["Access-Control-Allow-Private-Network"] = "true"
+    return response
 
 graph = build_graph_with_memory()
 
