@@ -6,6 +6,7 @@ dist/
 wheels/
 *.egg-info
 .coverage
+.coverage.*
 agent_history.gif
 static/browser_history/*.gif
 
@@ -25,4 +26,8 @@ conf.yaml
 # coverage report
 coverage.xml
 coverage/
+
+
+result_trial_run_1.md
+
 set_proxy.sh
