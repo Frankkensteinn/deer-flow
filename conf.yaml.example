@@ -5,16 +5,18 @@
 # - Replace `base_url` and `model` name if you want to use a custom model.
 # - A restart is required every time you change the `config.yaml` file.
 
+# Azure openai
+
 BASIC_MODEL:
-  base_url: https://ark.cn-beijing.volces.com/api/v3
-  model: "doubao-1-5-pro-32k-250115"
-  api_key: xxxx
+  azure_endpoint: "https://<resource-name>.openai.azure.com/"
+  api_key: "xxx"
+  api_version: "2024-12-01-preview"
+  deployment_name: "gpt-4o-mini"
+  model_name: "gpt-4o-mini"
 
-# Reasoning model is optional.
-# Uncomment the following settings if you want to use reasoning model
-# for planning.
-
-# REASONING_MODEL:
-#   base_url: https://ark-cn-beijing.bytedance.net/api/v3
-#   model: "doubao-1-5-thinking-pro-m-250428"
-#   api_key: xxxx
+REASONING_MODEL:
+  azure_endpoint: "https://<resource-name>.openai.azure.com/"
+  api_key: "xxx"
+  api_version: "2024-12-01-preview"
+  deployment_name: "o4-mini"
+  model_name: "o4-mini"%   

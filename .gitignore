@@ -27,4 +27,7 @@ conf.yaml
 coverage.xml
 coverage/
 
+
 result_trial_run_1.md
+
+set_proxy.sh
